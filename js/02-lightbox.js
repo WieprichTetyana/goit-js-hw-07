@@ -6,7 +6,7 @@ const galleryList = document.querySelector("ul.gallery");
 function createMarkUp({ preview, original, description }) {
     return `
     <li class="gallery__item">
-        <a class="gallery__link" href="${original}">
+        <a class="gallery__link" href="${original}" data-caption="${description}">
             <img class="gallery__image" src="${preview}" alt="${description}" />
         </a>
     </li>`
@@ -16,4 +16,4 @@ console.log(galleryCartArray);
 
 galleryList.innerHTML = galleryCartArray.join("");
 
-new SimpleLightbox(".gallery a", { captionDate: "alt", captionDelay: 250 });
+new SimpleLightbox(".gallery a", { captions: true, captionsData: "alt", captionsDelay: 250 });
